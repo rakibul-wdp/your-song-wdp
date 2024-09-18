@@ -1,10 +1,10 @@
 import {
-  Discovered,
   HomeHero,
   HowWorks,
   OurArtists,
   RedirectPage,
 } from "@/components/home";
+import { Discovered, Testimonials } from "@/components/shared";
 
 export default function Home() {
   return (
@@ -14,6 +14,7 @@ export default function Home() {
       <OurArtists />
       <RedirectPage />
       <Discovered />
+      <Testimonials />
     </main>
   );
 }

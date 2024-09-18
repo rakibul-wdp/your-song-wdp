@@ -1,4 +1,4 @@
-import { Navbar, Providers } from "@/components/shared";
+import { Footer, Navbar, Providers } from "@/components/shared";
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import { FC } from "react";
@@ -21,6 +21,7 @@ const RootLayout: FC<Readonly<IChildren>> = ({ children }) => {
         <Providers>
           <Navbar />
           {children}
+          <Footer />
         </Providers>
       </body>
     </html>

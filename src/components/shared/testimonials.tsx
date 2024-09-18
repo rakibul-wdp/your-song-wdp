@@ -10,12 +10,12 @@ import {
 } from "../common/carousel";
 import { P, SubTitle } from "../typography";
 
-export interface ITabs {
+export interface ITestimonials {
   id: number;
   description: string;
 }
 
-export const tabs: ITabs[] = [
+export const testimonials: ITestimonials[] = [
   {
     id: 1,
     description:
@@ -56,7 +56,7 @@ export const Testimonials: FC = () => {
           className="w-full"
         >
           <CarouselContent>
-            {tabs.map(({ id, description }) => (
+            {testimonials.map(({ id, description }) => (
               <CarouselItem key={id} className="basis-1/1">
                 <div>
                   <Image

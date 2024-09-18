@@ -4,7 +4,7 @@ import {
   OurArtists,
   RedirectPage,
 } from "@/components/home";
-import { Discovered, Testimonials } from "@/components/shared";
+import { Discovered, Genre, Testimonials } from "@/components/shared";
 
 export default function Home() {
   return (
@@ -15,6 +15,7 @@ export default function Home() {
       <RedirectPage />
       <Discovered />
       <Testimonials />
+      <Genre />
     </main>
   );
 }

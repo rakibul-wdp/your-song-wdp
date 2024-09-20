@@ -30,7 +30,7 @@ const instruments: IField[] = [
 
 export const Filters: FC = () => {
   return (
-    <div className="w-full flex flex-col items-center justify-center gap-4">
+    <div className="flex flex-col items-center justify-center gap-4">
       <FilterSection
         title="Music genre"
         fields={musicGenres}

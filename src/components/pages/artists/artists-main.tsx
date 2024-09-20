@@ -7,10 +7,7 @@ import { FiltersResults } from "./filters-results";
 export const ArtistsMain: FC = () => {
   return (
     <Container
-      className={cn(
-        "py-10 md:py-16",
-        "flex items-center justify-center gap-12"
-      )}
+      className={cn("py-10 md:py-16", "flex items-start justify-center gap-12")}
     >
       <Filters />
       <FiltersResults />

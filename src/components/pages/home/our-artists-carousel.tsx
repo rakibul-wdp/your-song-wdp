@@ -5,16 +5,16 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { FC, useState } from "react";
-import { Button } from "../common";
+import { Button } from "../../common";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "../common/carousel";
-import { Tab, TabList, TabPanel, Tabs } from "../common/tabs";
-import { P } from "../typography";
+} from "../../common/carousel";
+import { Tab, TabList, TabPanel, Tabs } from "../../common/tabs";
+import { P } from "../../typography";
 
 export interface ITabs {
   id: number;

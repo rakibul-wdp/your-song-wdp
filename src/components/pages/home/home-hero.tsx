@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import { FC } from "react";
-import { Button } from "../common";
-import { P, Title } from "../typography";
+import { Button } from "../../common";
+import { P, Title } from "../../typography";
 
 export const HomeHero: FC = () => {
   return (

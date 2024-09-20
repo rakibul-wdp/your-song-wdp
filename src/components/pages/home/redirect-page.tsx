@@ -2,8 +2,8 @@ import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { FC } from "react";
-import { Container } from "../common";
-import { P, SubTitle } from "../typography";
+import { Container } from "../../common";
+import { P, SubTitle } from "../../typography";
 
 export const RedirectPage: FC = () => {
   return (

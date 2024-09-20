@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { Container } from "../common";
-import { P, SubTitle } from "../typography";
+import { Container } from "../../common";
+import { P, SubTitle } from "../../typography";
 import { OurArtistsCarousel } from "./our-artists-carousel";
 
 export const OurArtists: FC = () => {

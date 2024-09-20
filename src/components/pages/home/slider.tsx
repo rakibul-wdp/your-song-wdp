@@ -2,7 +2,7 @@
 
 import { ArrowRight } from "lucide-react";
 import { FC, useEffect, useState } from "react";
-import { P, SubTitle, Title } from "../typography";
+import { P, SubTitle, Title } from "../../typography";
 
 export interface ISliders {
   id: number;

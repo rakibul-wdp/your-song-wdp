@@ -3,10 +3,11 @@ import {
   HowWorks,
   OurArtists,
   RedirectPage,
-} from "@/components/home";
+} from "@/components/pages/home";
 import { Discovered, Genre, Testimonials } from "@/components/shared";
+import { NextPage } from "next";
 
-export default function Home() {
+const Home: NextPage = () => {
   return (
     <main>
       <HomeHero />
@@ -18,4 +19,6 @@ export default function Home() {
       <Genre />
     </main>
   );
-}
+};
+
+export default Home;

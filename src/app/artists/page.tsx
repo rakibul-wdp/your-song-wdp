@@ -1,9 +1,10 @@
-import { ArtistsHero } from "@/components/pages/artists";
+import { ArtistsHero, ArtistsMain } from "@/components/pages/artists";
 
 const Artists = () => {
   return (
     <main>
       <ArtistsHero />
+      <ArtistsMain />
     </main>
   );
 };

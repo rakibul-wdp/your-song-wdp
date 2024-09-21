@@ -8,10 +8,10 @@ import { P, SubTitle } from "../../typography";
 export const RedirectPage: FC = () => {
   return (
     <Container className="py-16 md:py-20">
-      <div className="flex items-center justify-center gap-6">
+      <div className="flex flex-col lg:flex-row items-center justify-center gap-6">
         <div className={cn("relative", "rounded-3xl")}>
           <div
-            className="absolute inset-0 bg-center bg-no-repeat bg-cover"
+            className="absolute inset-0 bg-center bg-no-repeat bg-cover rounded-3xl"
             style={{
               backgroundImage: `
               linear-gradient(0deg, #1D1D1F, #1D1D1F),
@@ -28,11 +28,11 @@ export const RedirectPage: FC = () => {
             className={cn(
               "relative z-10",
               "flex flex-col items-start justify-center gap-4 md:gap-2",
-              "p-10 pt-[230px]"
+              "p-10 px-4 md:px-10 pt-[203px] md:pt-[230px]"
             )}
           >
             <SubTitle variant="H4">Invest in Music</SubTitle>
-            <P variant="P2" className="text-white/50">
+            <P variant="P2" className="text-white/50 mt-2 mb-10">
               Your investment fuels the best new talent on their rise to the
               top. Collaborate with indie songwriters to inspire and produce a
               one-of-a-kind original song through an engaging process you won’t
@@ -40,7 +40,10 @@ export const RedirectPage: FC = () => {
             </P>
             <Link
               href="/pricing"
-              className="text-xl leading-6 font-bold font-outfit text-primary-coral"
+              className={cn(
+                "text-xl leading-6 font-bold font-outfit text-primary-coral",
+                "flex items-center justify-center gap-1"
+              )}
             >
               Learn More
               <ArrowRight className="" />
@@ -48,9 +51,14 @@ export const RedirectPage: FC = () => {
           </div>
         </div>
 
-        <div className="bg-[#1D1D1F] rounded-3xl p-10 pt-36">
+        <div
+          className={cn(
+            "bg-[#1D1D1F] lg:basis-[90%] rounded-3xl p-10 px-4 md:px-10 pt-[105px] md:pt-36",
+            "flex flex-col items-start justify-center"
+          )}
+        >
           <SubTitle variant="H4">Get Your Questions Answered</SubTitle>
-          <P variant="P2" className="text-white/50">
+          <P variant="P2" className="text-white/50 mt-4 mb-10">
             The right song at the right moment makes all the difference. We know
             what you’re thinking: “How can I get more of that in my life?” We
             answer this burning question (and many others) on our FAQ/Contact
@@ -58,7 +66,7 @@ export const RedirectPage: FC = () => {
           </P>
           <Link
             href="/contact"
-            className="text-xl leading-6 font-bold font-outfit text-primary-coral"
+            className="text-xl leading-6 font-bold font-outfit text-primary-coral flex items-center justify-center gap-1"
           >
             FAQs
             <ArrowRight className="" />
@@ -85,11 +93,14 @@ export const RedirectPage: FC = () => {
           className={cn(
             "relative z-10",
             "flex flex-col items-start justify-center gap-4 md:gap-2",
-            "p-10 pt-[230px]"
+            "p-10 px-4 md:px-10 pt-[62px] md:pt-[200px]"
           )}
         >
           <SubTitle variant="H4">From Inspiration to Impact</SubTitle>
-          <P variant="P2" className="text-white/50">
+          <P
+            variant="P2"
+            className="text-white/50 mt-2 mb-10 w-full md:w-[68%]"
+          >
             YourSong revolutionizes the trajectory of emerging artists. Our
             platform empowers you to engage in the songwriting process and own
             part of the journey. You receive a custom-made song — and even a
@@ -99,7 +110,7 @@ export const RedirectPage: FC = () => {
           </P>
           <Link
             href="/pricing"
-            className="text-xl leading-6 font-bold font-outfit text-primary-coral"
+            className="text-xl leading-6 font-bold font-outfit text-primary-coral flex items-center justify-center gap-1"
           >
             Learn More
             <ArrowRight className="" />

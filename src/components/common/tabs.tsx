@@ -32,9 +32,7 @@ const Tab = ({ children, isActive, className, onClick }: TabProps) => {
       onClick={onClick}
       className={cn(
         "px-4 py-2 text-sm font-medium",
-        isActive
-          ? "bg-blue-500 text-white"
-          : "bg-gray-200 text-gray-700 hover:bg-gray-300",
+        isActive ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-700",
         "rounded-md",
         className
       )}

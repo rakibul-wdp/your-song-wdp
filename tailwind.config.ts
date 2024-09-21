@@ -22,6 +22,9 @@ export default {
         "hero-bg-img": "url('/images/hero-bg.jpeg')",
         "how-works": "url('/icons/how-works.svg')",
       },
+      listStyleImage: {
+        checkmark: 'url("/icons/check.svg")',
+      },
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",

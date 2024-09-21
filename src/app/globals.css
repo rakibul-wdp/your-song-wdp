@@ -23,3 +23,17 @@ body {
 .hero-bg-dark {
   background: linear-gradient(180deg, rgba(20, 20, 22, 0.6) 0%, #141416 86.26%);
 }
+
+.price {
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #e1574b 9.92%,
+    #e4c477 52.47%,
+    #4f9b8f 91.69%,
+    #ffffff 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

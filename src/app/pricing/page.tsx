@@ -1,4 +1,10 @@
-import { Cost, InvestmentGoes, PricingHero } from "@/components/pages/pricing";
+import {
+  Cost,
+  InvestmentGoes,
+  PricingHero,
+  YourSongImpact,
+} from "@/components/pages/pricing";
+import { Testimonials } from "@/components/shared";
 
 const Pricing = () => {
   return (
@@ -6,6 +12,8 @@ const Pricing = () => {
       <PricingHero />
       <InvestmentGoes />
       <Cost />
+      <Testimonials />
+      <YourSongImpact />
     </main>
   );
 };

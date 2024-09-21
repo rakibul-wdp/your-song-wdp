@@ -1,5 +1,6 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
 import { FC, useEffect, useState } from "react";
 import { P, SubTitle, Title } from "../../typography";
@@ -63,6 +64,19 @@ export const sliders: ISliders[] = [
   },
 ];
 
+interface ColorMap {
+  [key: number]: string;
+}
+
+const colorMap: ColorMap = {
+  1: "text-primary-green",
+  2: "text-primary-coral",
+  3: "text-primary-yellow",
+  4: "text-primary-green",
+  5: "text-primary-coral",
+  6: "text-primary-yellow",
+};
+
 export const Slider: FC = () => {
   const [activeCard, setActiveCard] = useState(1);
 
@@ -74,39 +88,57 @@ export const Slider: FC = () => {
   }, []);
 
   return (
-    <div className="flex justify-center items-center gap-2 overflow-hidden">
+    <div className="flex flex-col lg:flex-row justify-center items-center gap-2 overflow-hidden">
       {sliders.map(({ id, img, title, description, timeFrame }) => (
         <div
           key={id}
-          className={`transition-all duration-500 ease-in-out 
-          ${activeCard === id ? "flex-[5] bg-red-500" : "flex-[1] bg-gray-700"} 
-          rounded-md cursor-pointer flex justify-center items-center text-white`}
+          className={`h-[640px] w-full transition-all duration-500 ease-in-out 
+          ${activeCard === id ? "flex-[5] basis-11/12" : "flex-[1]"} 
+          rounded-md cursor-pointer flex justify-center items-center`}
           style={{
             backgroundImage: `url(${img})`,
           }}
           onClick={() => setActiveCard(id)}
         >
           {activeCard === id ? (
-            <div className="text-center">
-              <Title variant="H4">0{id}</Title>
-              <P variant="P3">Step {id} / 6</P>
-              <SubTitle variant="H4">{title}</SubTitle>
-              <P variant="P3">{description}</P>
-              <P variant="P3" className="uppercase">
-                TimeFrame
-              </P>
-              <SubTitle variant="H7" className="leading-9">
-                {timeFrame}
-              </SubTitle>
-              <h2 className="text-xl font-bold">Card {id}</h2>
-              <p className="mt-2">This is the content of Card {id}</p>
+            <div className="py-6 px-4 lg:p-16 h-full flex flex-col items-start justify-between">
+              <div>
+                <div className="flex flex-col items-start justify-center gap-1 mb-6">
+                  <Title variant="H4">0{id}</Title>
+                  <P variant="P3" className={cn(colorMap[id])}>
+                    Step {id} / 6
+                  </P>
+                </div>
+                <div className="flex flex-col items-start justify-center gap-3">
+                  <SubTitle variant="H4">{title}</SubTitle>
+                  <P variant="P3" className="w-[70%]">
+                    {description}
+                  </P>
+                </div>
+              </div>
+              <div className="flex flex-col items-start justify-center gap-1">
+                <P variant="P3" className={cn("uppercase", colorMap[id])}>
+                  TimeFrame
+                </P>
+                <SubTitle variant="H7" className="leading-9">
+                  {timeFrame}
+                </SubTitle>
+              </div>
             </div>
           ) : (
-            <div className="flex items-center space-x-2">
-              <SubTitle variant="H4" className="leading-[64px]">
+            <div
+              className={cn(
+                "bg-[#1D1D1F] w-full flex lg:flex-col items-center justify-between gap-[230px] lg:gap-[392px]",
+                "py-3 px-4 lg:py-16 lg:px-[19px]"
+              )}
+            >
+              <SubTitle
+                variant="H4"
+                className={cn("leading-[64px]", colorMap[id])}
+              >
                 0{id}
               </SubTitle>
-              <ArrowRight />
+              <ArrowRight className={cn(colorMap[id])} />
             </div>
           )}
         </div>

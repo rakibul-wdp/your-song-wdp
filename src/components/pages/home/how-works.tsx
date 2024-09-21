@@ -14,7 +14,7 @@ export const HowWorks: FC = () => {
         </P>
       </div>
 
-      <div className="bg-white w-full h-[640px]">
+      <div className="w-full">
         <Slider />
       </div>
     </Container>

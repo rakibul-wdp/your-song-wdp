@@ -1,9 +1,10 @@
-import { PricingHero } from "@/components/pages/pricing";
+import { InvestmentGoes, PricingHero } from "@/components/pages/pricing";
 
 const Pricing = () => {
   return (
     <main>
       <PricingHero />
+      <InvestmentGoes />
     </main>
   );
 };

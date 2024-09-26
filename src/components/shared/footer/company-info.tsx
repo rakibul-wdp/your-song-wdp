@@ -9,7 +9,7 @@ import { socials } from "./db";
 
 export const CompanyInfo: FC = () => {
   return (
-    <div className="flex flex-col items-center lg:items-start justify-start gap-1 md:gap-[2px]">
+    <div className="col-span-2 flex flex-col items-center lg:items-start justify-start gap-1 md:gap-[2px]">
       <Logo />
       <P
         variant="P4"

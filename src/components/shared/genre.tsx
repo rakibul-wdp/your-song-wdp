@@ -1,5 +1,6 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { FC, useState } from "react";
 import { Button, Container } from "../common";
@@ -11,6 +12,7 @@ import {
   CarouselPrevious,
 } from "../common/carousel";
 import { P, Title } from "../typography";
+import { Check } from "lucide-react";
 
 export interface IGenres {
   id: number;
@@ -89,8 +91,16 @@ export const Genre: FC = () => {
   };
 
   return (
-    <Container className="py-16 md:py-[120px]">
-      <Title variant="H3" className="leading-[72px]">
+    <Container
+      className={cn(
+        "py-16 md:py-[120px]",
+        "flex flex-col items-center justify-center"
+      )}
+    >
+      <Title
+        variant="H3"
+        className="leading-[44.8px] md:leading-[72px] text-center"
+      >
         Pick a Genre. Produce a Song.
       </Title>
 
@@ -105,36 +115,37 @@ export const Genre: FC = () => {
             {genres.map(({ id, icon, title }) => (
               <CarouselItem
                 key={id}
-                className="basis-1/5"
+                className="basis-[20%]"
                 onClick={() => handleSelect(id)}
               >
                 <div
-                  className={`relative py-10 px-[72px] cursor-pointer rounded-md transition-transform ${
+                  className={cn(
+                    "py-10 border rounded-2xl",
+                    "flex flex-col items-center justify-center gap-6",
+                    "relative cursor-pointer transition-transform",
                     selectedGenre === id
                       ? "border-2 border-primary-coral"
                       : "border border-transparent"
-                  }`}
+                  )}
                 >
                   <Image src={icon} width={80} height={80} alt="genre" />
                   <P variant="P3">{title}</P>
 
                   {selectedGenre === id && (
-                    <div className="absolute top-2 right-2 w-5 h-5 bg-red-500 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">
-                        &#10003;
-                      </span>
+                    <div className="absolute -top-0.5 -right-0.5 w-10 h-10 p-3 bg-red-500 rounded-full flex items-center justify-center">
+                      <Check className="text-white w-5 h-5" />
                     </div>
                   )}
                 </div>
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          <CarouselPrevious className="border-none" />
+          <CarouselNext className="border-none" />
         </Carousel>
       </div>
 
-      <Button variant="default" size="default">
+      <Button variant="default" size="default" className="w-full sm:w-fit">
         Start Now
       </Button>
     </Container>

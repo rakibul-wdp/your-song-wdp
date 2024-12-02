@@ -20,6 +20,7 @@ export default {
       },
       backgroundImage: {
         "hero-bg-img": "url('/images/hero-bg.jpeg')",
+        "how-works": "url('/icons/how-works.svg')",
       },
       colors: {
         background: "hsl(var(--background))",

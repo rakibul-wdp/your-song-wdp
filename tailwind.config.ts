@@ -18,6 +18,9 @@ export default {
         "1600px": "1600px",
         "1700px": "1700px",
       },
+      backgroundImage: {
+        "hero-bg-img": "url('/images/hero-bg.jpeg')",
+      },
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",

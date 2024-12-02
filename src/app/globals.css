@@ -19,3 +19,7 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.hero-bg-dark {
+  background: linear-gradient(180deg, rgba(20, 20, 22, 0.6) 0%, #141416 86.26%);
+}

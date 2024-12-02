@@ -1,3 +1,4 @@
+import { Navbar, Providers } from "@/components/shared";
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import { FC } from "react";
@@ -16,7 +17,12 @@ export const metadata: Metadata = {
 const RootLayout: FC<Readonly<IChildren>> = ({ children }) => {
   return (
     <html lang="en">
-      <body className={`${outfit.variable} antialiased`}>{children}</body>
+      <body className={`${outfit.variable} antialiased`}>
+        <Providers>
+          <Navbar />
+          {children}
+        </Providers>
+      </body>
     </html>
   );
 };

@@ -1,4 +1,5 @@
 import {
+  Discovered,
   HomeHero,
   HowWorks,
   OurArtists,
@@ -12,6 +13,7 @@ export default function Home() {
       <HowWorks />
       <OurArtists />
       <RedirectPage />
+      <Discovered />
     </main>
   );
 }

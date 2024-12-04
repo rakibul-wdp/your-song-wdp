@@ -4,7 +4,7 @@ import {
   PricingHero,
   YourSongImpact,
 } from "@/components/pages/pricing";
-import { Testimonials } from "@/components/shared";
+import { FAQ, Testimonials } from "@/components/shared";
 
 const Pricing = () => {
   return (
@@ -14,6 +14,7 @@ const Pricing = () => {
       <Cost />
       <Testimonials />
       <YourSongImpact />
+      <FAQ />
     </main>
   );
 };

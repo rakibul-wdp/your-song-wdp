@@ -16,10 +16,10 @@ export const Footer = () => {
               <div className="min-w-fit" key={index}>
                 <SubTitle variant="H9">Links {index + 1}</SubTitle>
                 <div className="space-y-2.5 pt-4 md:pt-6 md:space-y-3">
-                  {links.map(({ label, link }) => (
+                  {links.map(({ id, label, link }) => (
                     <Link
                       href={link}
-                      key={label}
+                      key={id}
                       className="group block transition-all delay-100"
                     >
                       <P

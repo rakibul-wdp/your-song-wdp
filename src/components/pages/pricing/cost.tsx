@@ -23,15 +23,15 @@ const feeCoversDetails: IFeeCoversDetails[] = [
     title: "Collaboration",
     includes: [
       {
-        id: 1,
+        id: 9,
         include: "1 hour kickoff call",
       },
       {
-        id: 2,
+        id: 10,
         include: "1 week of songwriting & recording",
       },
       {
-        id: 3,
+        id: 11,
         include: "1 original song (3-5 min)",
       },
     ],
@@ -41,19 +41,19 @@ const feeCoversDetails: IFeeCoversDetails[] = [
     title: "Production",
     includes: [
       {
-        id: 1,
+        id: 15,
         include: "Quality control process",
       },
       {
-        id: 2,
+        id: 16,
         include: "Professional mix & master",
       },
       {
-        id: 3,
+        id: 17,
         include: "Studio quality, shareable song",
       },
       {
-        id: 4,
+        id: 18,
         include: "Track song progress in real-time",
       },
     ],
@@ -63,19 +63,19 @@ const feeCoversDetails: IFeeCoversDetails[] = [
     title: "Promotion",
     includes: [
       {
-        id: 1,
+        id: 20,
         include: "Artist spotlight page",
       },
       {
-        id: 2,
+        id: 21,
         include: "Streaming",
       },
       {
-        id: 3,
+        id: 22,
         include: "distribution",
       },
       {
-        id: 4,
+        id: 23,
         include: "Royalty tracking",
       },
     ],

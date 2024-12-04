@@ -1,21 +1,26 @@
 export const links = [
   {
+    id: 1,
     label: "Sample Link",
     link: "/",
   },
   {
+    id: 2,
     label: "Sample Link",
     link: "/",
   },
   {
+    id: 3,
     label: "Sample Link",
     link: "/",
   },
   {
+    id: 4,
     label: "Sample Link",
     link: "/",
   },
   {
+    id: 5,
     label: "Sample Link",
     link: "/",
   },

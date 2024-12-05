@@ -33,16 +33,46 @@ const makeMusics: IMakeMusics[] = [
 export const MakeMusic: FC = () => {
   return (
     <Container className="py-[60px] md:py-20">
-      <div>
+      <div className="flex flex-col lg:flex-row items-center justify-center gap-6">
         {makeMusics.map(({ id, img, title, description, small }) => (
-          <div key={id} style={{ backgroundImage: `url('${img}')` }}>
-            <SubTitle variant="H6">{title}</SubTitle>
-            <P variant="P2" className="text-[#A1A1A2]">
-              {description}
-            </P>
-            <P variant="P4" className="text-xs text-[#5A5A5B]">
-              {small}
-            </P>
+          <div
+            className={cn(
+              "relative",
+              id === 1 ? "pt-[339px]  md:pb-[72px]" : "pt-[243px] md:pb-[38px]",
+              "pb-6 px-4 md:pt-[183px] md:px-16"
+            )}
+          >
+            <div
+              className={cn(
+                "absolute inset-0 bg-center bg-no-repeat bg-cover",
+                "rounded-3xl md:rounded-[32px]"
+              )}
+              style={{
+                backgroundImage: `
+                linear-gradient(90deg, rgba(225, 87, 75, 0.6) 0%, rgba(228, 196, 119, 0.6) 53.26%, rgba(79, 155, 143, 0.6) 100%),
+                linear-gradient(180deg, rgba(29, 29, 31, 0) 0%, #1D1D1F 65.93%),
+                url(${img})
+                `,
+                backgroundBlendMode: "overlay",
+                opacity: 0.5,
+                zIndex: -1,
+              }}
+            ></div>
+            <div
+              key={id}
+              className={cn(
+                "relative z-10",
+                "flex flex-col items-start justify-center gap-4"
+              )}
+            >
+              <SubTitle variant="H6">{title}</SubTitle>
+              <P variant="P2" className="text-[#A1A1A2]">
+                {description}
+              </P>
+              <P variant="P4" className="text-xs text-[#5A5A5B]">
+                {small}
+              </P>
+            </div>
           </div>
         ))}
       </div>
@@ -54,7 +84,7 @@ export const MakeMusic: FC = () => {
           "py-[84px] md:py-[102px]"
         )}
       >
-        <SubTitle variant="H4" className="leading-[54px]">
+        <SubTitle variant="H4" className="leading-[54px] text-center">
           Let’s make music together.
         </SubTitle>
         <Button variant="default" size="default">

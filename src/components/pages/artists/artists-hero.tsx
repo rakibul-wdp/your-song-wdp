@@ -23,7 +23,7 @@ export const ArtistsHero: FC = () => {
           className={cn(
             "relative z-10",
             "flex flex-col text-center items-center justify-center gap-6",
-            "px-4 md:px-0"
+            "px-3 md:px-0"
           )}
         >
           <Title variant="H3">Explore Our Artists</Title>

@@ -3,3 +3,4 @@ export * from "./artists-main";
 export * from "./filters";
 export * from "./filters-results";
 export * from "./filter-section";
+export * from "./pagination";

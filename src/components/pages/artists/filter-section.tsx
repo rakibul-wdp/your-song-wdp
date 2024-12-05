@@ -1,6 +1,8 @@
 "use client";
 
-import { ArrowDown } from "lucide-react";
+import { P, SubTitle } from "@/components/typography";
+import { cn } from "@/lib/utils";
+import { ChevronDown, Plus } from "lucide-react";
 import { FC, useState } from "react";
 
 interface IFields {
@@ -39,32 +41,44 @@ export const FilterSection: FC<FilterSectionProps> = ({
   };
 
   return (
-    <div className="w-full p-4 border rounded-md shadow-lg">
+    <div className="w-full min-w-[288px] max-w-[288px] p-6 rounded-md shadow-lg">
       <div
         onClick={handleToggle}
-        className="flex items-center justify-between p-2 cursor-pointer rounded-md"
+        className="flex items-center justify-between gap-[80px] cursor-pointer rounded-md"
       >
-        <span className="text-lg font-medium">{title}</span>
-        <ArrowDown
+        <SubTitle
+          variant="H8"
+          className="leading-7 font-semibold text-[#A1A1A2]"
+        >
+          {title}
+        </SubTitle>
+        <ChevronDown
           className={`transition-transform ${isOpen ? "rotate-180" : ""}`}
         />
       </div>
 
       {isOpen && fieldType === "option" && (
-        <div className="p-4 max-w-md mx-auto">
-          <h2 className="text-lg font-medium mb-4">Select Your Options</h2>
-          <div className="grid grid-cols-2 gap-4">
+        <div className="pt-4">
+          <div className="flex flex-wrap items-start justify-start gap-2">
             {fields.map((option) => (
               <div
                 key={option.id}
                 onClick={() => handleOptionClick(option.id)}
-                className={`p-3 border rounded-lg cursor-pointer text-center ${
+                className={`p-2 rounded-lg cursor-pointer text-center flex items-center justify-center gap-2 ${
                   selectedOptions.includes(option.id)
-                    ? "bg-blue-500 text-white"
-                    : "bg-gray-100 text-black"
+                    ? "bg-primary-coral text-white"
+                    : "bg-[#23262F] text-[#A1A1A2]"
                 }`}
               >
-                {option.label}
+                <P variant="P3" className="leading-4">
+                  {option.label}
+                </P>
+                <Plus
+                  className={cn(
+                    "w-4 h-4 text-[#A1A1A2]",
+                    selectedOptions.includes(option.id) ? "hidden" : "block"
+                  )}
+                />
               </div>
             ))}
           </div>
@@ -72,25 +86,29 @@ export const FilterSection: FC<FilterSectionProps> = ({
       )}
 
       {isOpen && fieldType === "checkbox" && (
-        <div className="p-4 max-w-sm mx-auto">
-          <h2 className="text-lg font-medium mb-4">Select One Option</h2>
+        <div className="pt-4">
           <div className="space-y-4">
             {fields.map((option) => (
               <label
                 key={option.id}
-                className={`flex items-center p-3 border rounded-lg cursor-pointer ${
+                className={`flex items-center p-[11px] rounded-lg cursor-pointer ${
                   selectedOption === option.id
-                    ? "bg-blue-500 text-white"
-                    : " text-black"
+                    ? "bg-primary-coral text-white"
+                    : " text-[#A1A1A2]"
                 }`}
               >
                 <input
                   type="checkbox"
                   checked={selectedOption === option.id}
                   onChange={() => handleCheckboxChange(option.id)}
-                  className=""
+                  className={cn(
+                    "w-5 h-5 border-2 cursor-pointer border-[#A1A1A2] rounded-sm checked:bg-no-repeat checked:bg-center checked:border-none checked:bg-white",
+                    selectedOption === option.id ? "" : "appearance-none"
+                  )}
                 />
-                <span className="ml-2">{option.label}</span>
+                <P variant="P3" className="leading-4 ml-5">
+                  {option.label}
+                </P>
               </label>
             ))}
           </div>

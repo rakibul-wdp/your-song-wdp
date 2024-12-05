@@ -49,6 +49,7 @@ export const MakeMusic: FC = () => {
               id === 1 ? "pt-[339px]  md:pb-[72px]" : "pt-[243px] md:pb-[38px]",
               "pb-6 px-4 md:pt-[183px] md:px-16"
             )}
+            key={id}
           >
             <div
               className={cn(

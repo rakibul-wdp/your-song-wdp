@@ -25,11 +25,11 @@ export const ImpactHero: FC = () => {
           className={cn(
             "relative z-10",
             "flex flex-col text-center items-center justify-center gap-4 md:gap-2",
-            "px-4 md:px-0"
+            "w-[91.79%] sm:w-[80%] lg:w-[70%] xl:w-[60%] 2xl:w-[38.10%] mx-auto"
           )}
         >
           <Title variant="H3" className="capitalize">
-            Changing the world <br /> one song at a time
+            Changing the world one song at a time
           </Title>
           <P variant="P1" className="leading-9 text-[#A1A1A2]">
             YourSong is for those who love music, enjoy sharing it with others,

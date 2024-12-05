@@ -1,5 +1,11 @@
 import { Button, Container } from "@/components/common";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/common/carousel";
 import { P, SubTitle } from "@/components/typography";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { FC } from "react";
 
@@ -99,13 +105,35 @@ const feeCovers: IFeeCovers[] = [
 
 export const Cost: FC = () => {
   return (
-    <Container className="py-16 md:py-16">
-      <div>
-        <div>
-          <SubTitle variant="H6" className="leading-[48px] text-[#A8A7A7]">
+    <Container
+      className={cn(
+        "py-16 md:py-16",
+        "flex flex-col items-center justify-center gap-y-6"
+      )}
+    >
+      <div
+        className={cn(
+          "lg:max-w-[957px] w-full flex flex-col md:flex-row items-start md:items-center justify-center md:gap-16",
+          "rounded-[32px] py-4 md:py-12 px-6 lg:px-[78px]"
+        )}
+        style={{
+          backgroundImage: `
+          url('/icons/yellow.svg'),
+          url('/icons/red.svg'),
+          url('/icons/green.svg')
+          `,
+          backgroundPosition: "left bottom, left top, right top",
+          backgroundRepeat: "no-repeat, no-repeat, no-repeat",
+        }}
+      >
+        <div className="flex flex-col items-center justify-center gap-6">
+          <SubTitle
+            variant="H6"
+            className="leading-[48px] text-[#A8A7A7] text-center"
+          >
             Create your song for as low as
           </SubTitle>
-          <div>
+          <div className="relative flex items-center justify-center gap-2">
             <P
               variant="P1"
               className="text-[40px] leading-[60px] text-[#E8E8E84D]"
@@ -120,25 +148,30 @@ export const Cost: FC = () => {
               width={72}
               height={72}
               alt="flat free"
+              className="absolute top-0 -right-7"
             />
           </div>
-          <Button variant="default" size="default">
+          <Button
+            variant="default"
+            size="default"
+            className="w-full sm:w-[60%]"
+          >
             Start now
           </Button>
         </div>
 
-        <div>divider</div>
+        <hr className="w-full md:w-[1px] h-[1px] md:h-48 bg-[#A1A1A2] rounded my-6 md:my-10" />
 
         <div>
-          <SubTitle variant="H8" className="text-[#A8A7A7]">
+          <SubTitle variant="H8" className="text-[#A8A7A7] mb-5">
             This fee covers;
           </SubTitle>
-          <ul className="list-image-checkmark list-inside flex flex-wrap items-center justify-start gap-x-14">
+          <ul className="list-image-checkmark list-inside flex flex-col items-start justify-center gap-5">
             {feeCovers.map(({ id, cover }) => (
               <li key={id}>
                 <SubTitle
                   variant="H8"
-                  className="inline text-primary -ml-[3px]"
+                  className="inline text-[#FFCAC5] font-medium -ml-[3px] -mb-2"
                 >
                   {cover}
                 </SubTitle>
@@ -148,23 +181,48 @@ export const Cost: FC = () => {
         </div>
       </div>
 
-      <div>
-        {feeCoversDetails.map(({ id, title, includes }) => (
-          <div key={id}>
-            <SubTitle variant="H7" className="text-[#A1A1A2]">
-              {title}
-            </SubTitle>
-            <ul className="list-disc list-inside flex items-center justify-start">
-              {includes.map(({ id, include }) => (
-                <li key={id}>
-                  <P variant="P3" className="inline text-primary -ml-[3px]">
-                    {include}
-                  </P>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+      <div className={cn("lg:max-w-[957px] w-full")}>
+        <Carousel
+          opts={{
+            align: "start",
+          }}
+          className="w-full"
+        >
+          <CarouselContent>
+            {feeCoversDetails.map(({ id, title, includes }) => (
+              <CarouselItem
+                key={id}
+                className="basis-[88%] sm:basis-[60%] md:basis-[30%] w-full mx-6 flex flex-col items-start justify-center gap-10 py-12 px-6"
+                style={{
+                  backgroundImage: `
+                  ${
+                    id === 1
+                      ? "url('/icons/cost-red.svg')"
+                      : id === 2
+                      ? "url('/icons/cost-green.svg')"
+                      : "url('/icons/cost-blue.svg')"
+                  }
+                  `,
+                  backgroundPosition: "left",
+                  backgroundRepeat: "no-repeat",
+                }}
+              >
+                <SubTitle variant="H7" className="text-[#A1A1A2]">
+                  {title}
+                </SubTitle>
+                <ul className="list-disc list-inside flex flex-col items-start justify-start">
+                  {includes.map(({ id, include }) => (
+                    <li key={id}>
+                      <P variant="P3" className="inline text-primary -ml-[3px]">
+                        {include}
+                      </P>
+                    </li>
+                  ))}
+                </ul>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
       </div>
     </Container>
   );

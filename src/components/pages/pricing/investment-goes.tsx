@@ -1,5 +1,6 @@
 import { Container } from "@/components/common";
 import { P, SubTitle } from "@/components/typography";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { FC } from "react";
 
@@ -37,18 +38,24 @@ const investmentGoes: IInvestmentGoes[] = [
 export const InvestmentGoes: FC = () => {
   return (
     <Container className="py-16 md:py-20 flex flex-col items-center justify-center">
-      <SubTitle variant="H5" className="mb-10">
+      <SubTitle variant="H5" className="mb-10 text-center">
         Where Your Investment Goes
       </SubTitle>
 
-      <div className="flex items-center justify-between">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-between">
         {investmentGoes.map(({ id, icon, title, description }) => (
-          <div key={id}>
+          <div
+            key={id}
+            className={cn(
+              "flex flex-col items-center justify-center gap-4",
+              "py-16 md:py-[104px] px-8 md:px-[60px]"
+            )}
+          >
             <Image src={icon} width={29} height={29} alt="investmentGoes" />
             <SubTitle variant="H8" className="leading-7">
               {title}
             </SubTitle>
-            <P variant="P3" className="text-[#A1A1A2]">
+            <P variant="P3" className="text-[#A1A1A2] text-center w-[85%]">
               {description}
             </P>
           </div>

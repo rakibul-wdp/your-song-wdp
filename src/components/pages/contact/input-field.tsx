@@ -6,15 +6,17 @@ type IInputField = { label: string; type: string };
 
 export const InputField: FC<IInputField> = ({ label, type }) => {
   return (
-    <div className="">
-      <label htmlFor="email" className="px-1">
-        <P variant="P1">{label}</P>
+    <div className="w-full">
+      <label htmlFor="email">
+        <P variant="P1" className="text-[#A1A1A2] pb-2">
+          {label}
+        </P>
       </label>
       <input
         type={type}
         id={type}
         className={cn(
-          "bg-[#282829] rounded w-full py-[13px] md:py-[18px] px-3 md:px-4",
+          "bg-[#282829] rounded-xl w-full py-[13px] md:py-3 px-3 md:px-4",
           label === "I need info about" && "hidden"
         )}
       />
@@ -23,7 +25,7 @@ export const InputField: FC<IInputField> = ({ label, type }) => {
         name="pets"
         id="pet-select"
         className={cn(
-          "bg-[#282829] border border-secondary/30 rounded w-full h-full py-[13px] md:py-[18px] px-3 md:px-4",
+          "bg-[#282829] rounded-xl w-full h-full py-[13px] md:py-[18px] px-3 md:px-4",
           label !== "I need info about" && "hidden"
         )}
       >

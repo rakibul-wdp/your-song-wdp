@@ -9,9 +9,17 @@ export const Discovered: FC = () => {
     <Container
       className={cn(
         "py-16 md:py-[51.47px]",
-        "flex flex-col md:flex-row items-center justify-center gap-16"
+        "flex flex-col md:flex-row items-center justify-center gap-16",
+        "relative"
       )}
     >
+      <Image
+        className="absolute inset-0 top-5 left-[50%] z-0 pointer-events-none hidden lg:block"
+        src="./icons/bg-icon/home-bg-icon-3.svg"
+        width={70}
+        height={66}
+        alt="home bg icon one"
+      />
       <div className="flex-1">
         <Title variant="H4" className="text-center md:text-start">
           Are You an Artist? Get Discovered.

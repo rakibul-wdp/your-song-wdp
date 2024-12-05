@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { Check } from "lucide-react";
 import Image from "next/image";
 import { FC, useState } from "react";
 import { Button, Container } from "../common";
@@ -12,7 +13,6 @@ import {
   CarouselPrevious,
 } from "../common/carousel";
 import { P, Title } from "../typography";
-import { Check } from "lucide-react";
 
 export interface IGenres {
   id: number;
@@ -94,9 +94,24 @@ export const Genre: FC = () => {
     <Container
       className={cn(
         "py-16 md:py-[120px]",
-        "flex flex-col items-center justify-center"
+        "flex flex-col items-center justify-center",
+        "relative"
       )}
     >
+      <Image
+        className="absolute inset-0 top-7 md:top-5 left-[100%] z-0 pointer-events-none"
+        src="./icons/bg-icon/home-bg-icon-4.svg"
+        width={150}
+        height={150}
+        alt="home bg icon one"
+      />
+      <Image
+        className="absolute inset-0 top-[90%] md:top-5 left-0 z-0 pointer-events-none"
+        src="./icons/bg-icon/home-bg-icon-5.svg"
+        width={50}
+        height={50}
+        alt="home bg icon one"
+      />
       <Title
         variant="H3"
         className="leading-[44.8px] md:leading-[72px] text-center"

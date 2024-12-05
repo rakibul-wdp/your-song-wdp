@@ -1,5 +1,6 @@
 import { Button } from "@/components/common";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 import { FC } from "react";
 import { Title } from "../../typography";
 
@@ -24,9 +25,17 @@ export const PricingHero: FC = () => {
           className={cn(
             "relative z-10",
             "flex flex-col text-center items-center justify-center gap-8 md:gap-16",
-            "px-4 md:px-0"
+            "px-4 md:px-0",
+            "relative"
           )}
         >
+          <Image
+            className="absolute inset-0 top-[60%] md:top-[55%] left-[80%] md:left-[75%] z-0 pointer-events-none rotate-90"
+            src="./icons/bg-icon/artist-bg-1.svg"
+            width={150}
+            height={150}
+            alt="home bg icon one"
+          />
           <Title variant="H3">Create Your Song</Title>
           <Button variant="default" size="default">
             Create YOur Song

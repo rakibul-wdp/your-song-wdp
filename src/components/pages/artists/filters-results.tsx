@@ -7,7 +7,7 @@ import { Pagination } from "./pagination";
 
 export const FiltersResults: FC = () => {
   return (
-    <div className="flex flex-col items-center md:items-start justify-center">
+    <div className="flex flex-col items-center md:items-start justify-center relative z-10">
       <div className="w-full flex items-center justify-between mb-6 md:mb-8">
         <SubTitle
           variant="H7"

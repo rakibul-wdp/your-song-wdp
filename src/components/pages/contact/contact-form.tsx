@@ -1,6 +1,7 @@
 import { Button, Container } from "@/components/common";
 import { P, Title } from "@/components/typography";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 import { FC } from "react";
 import { ContactInfo } from "./contact-info";
 import { InputField } from "./input-field";
@@ -10,10 +11,18 @@ export const ContactForm: FC = () => {
     <Container
       className={cn(
         "pt-[139px] pb-16 lg:pt-[202px] lg:pb-[120px]",
-        "flex flex-col lg:flex-row items-center justify-center lg:gap-10 xl:gap-60"
+        "flex flex-col lg:flex-row items-center justify-center lg:gap-10 xl:gap-60",
+        "relative"
       )}
     >
-      <div className="">
+      <Image
+        className="absolute inset-0 top-[55%] left-[45%] z-0 pointer-events-none hidden lg:block"
+        src="./icons/bg-icon/contact-bg-icon.svg"
+        width={200}
+        height={250}
+        alt="home bg icon one"
+      />
+      <div className="relative z-10">
         <Title variant="H1">Let’s talk</Title>
 
         <P variant="P1" className="leading-9 text-[#5A5A5B] mt-6 lg:mt-10">
@@ -27,7 +36,7 @@ export const ContactForm: FC = () => {
         <ContactInfo className="hidden lg:block" />
       </div>
 
-      <form className="w-full">
+      <form className="w-full relative z-10">
         <div className="w-full flex items-center justify-between gap-8 lg:gap-x-4 mb-8">
           <InputField label="First name" type="text" />
           <InputField label="Last name" type="text" />

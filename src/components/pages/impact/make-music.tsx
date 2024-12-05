@@ -1,6 +1,7 @@
 import { Button, Container } from "@/components/common";
 import { P, SubTitle } from "@/components/typography";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 import { FC } from "react";
 
 interface IMakeMusics {
@@ -33,7 +34,14 @@ const makeMusics: IMakeMusics[] = [
 export const MakeMusic: FC = () => {
   return (
     <Container className="py-[60px] md:py-20">
-      <div className="flex flex-col lg:flex-row items-center justify-center gap-6">
+      <Image
+        className="absolute inset-0 top-[65%] md:top-[65%] left-[50%] md:left-[15%] z-0 pointer-events-none"
+        src="./icons/bg-icon/artist-bg-1.svg"
+        width={150}
+        height={150}
+        alt="home bg icon one"
+      />
+      <div className="flex flex-col lg:flex-row items-center justify-center gap-6 relative z-10">
         {makeMusics.map(({ id, img, title, description, small }) => (
           <div
             className={cn(

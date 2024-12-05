@@ -41,7 +41,7 @@ export const FilterSection: FC<FilterSectionProps> = ({
   };
 
   return (
-    <div className="w-full min-w-[288px] max-w-[288px] p-6 rounded-md shadow-lg">
+    <div className="w-full min-w-[288px] max-w-[288px] p-6 rounded-md shadow-lg relative z-10">
       <div
         onClick={handleToggle}
         className="flex items-center justify-between gap-[80px] cursor-pointer rounded-md"

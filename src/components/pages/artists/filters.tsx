@@ -2,6 +2,7 @@
 
 import { FC } from "react";
 import { FilterSection } from "./filter-section";
+import Image from "next/image";
 
 interface IField {
   id: number;
@@ -30,7 +31,14 @@ const instruments: IField[] = [
 
 export const Filters: FC = () => {
   return (
-    <div className="flex flex-col items-center justify-center gap-4">
+    <div className="flex flex-col items-center justify-center gap-4 relative">
+      <Image
+        className="absolute inset-0 -top-[1.5%] md:top-[90%] left-[60%] md:left-[85%] z-0 pointer-events-none hidden md:block"
+        src="./icons/bg-icon/artist-bg-2.svg"
+        width={100}
+        height={100}
+        alt="home bg icon one"
+      />
       <FilterSection
         title="Music genre"
         fields={musicGenres}
